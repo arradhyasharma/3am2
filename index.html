@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <title>Reflex Test</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBER // REFLEX ARCADE</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <main class="container">
     <header>
-      <h1>REFLEX TESTER</h1>
-      <p class="subtitle">Measure neural response time in milliseconds.</p>
+      <h1>REFLEX // ARCADE</h1>
+      <p class="subtitle">Neural response speed & consistency benchmark.</p>
     </header>
+
 
     <div class="progress-bar">
       <span class="p-step" id="p1"></span>
@@ -18,16 +21,17 @@
       <span class="p-step" id="p3"></span>
       <span class="p-step" id="p4"></span>
       <span class="p-step" id="p5"></span>
-      </div>
+    </div>
+
     <div id="target-box" class="target-box state-wait">
       <div id="target-text" class="target-text">CLICK TO START (5 ROUNDS)</div>
     </div>
 
     <div class="rank-card">
-      <span class="stat-label">Current Neural Rank</span>
-      <span id="target-text" class="rank-text">UNRANKED</span>
+      <span class="stat-label">CURRENT NEURAL RANK</span>
+      <span id="rank-value" class="rank-text">UNRANKED</span>
     </div>
-
+      
     <div class="stats-grid">
       <div class="stat-card">
         <span class="stat-label">5-ROUND AVG</span>
