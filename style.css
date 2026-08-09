@@ -5,6 +5,7 @@
   --cyan: #00f2fe;
   --red: #ff0055;
   --green: #00ff88;
+  --purple: #a855f7;
   --text-dim: #64748b;
 }
 
@@ -50,23 +51,41 @@ h1 {
 .subtitle {
   color: var(--text-dim);
   font-size: 0.85rem;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
+
+.progress-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.p-step {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+
+.p-step.active { background: var(--cyan); }
+.p-step.done { background: var(--green); }
+
+
 .target-box {
-  height: 200px;
+  height: 180px;
   border-radius: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: all 0.15s ease;
   border: 2px solid var(--border);
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
-/* Game States */
 .target-box.state-wait {
   background: rgba(0, 242, 254, 0.05);
   border-color: var(--cyan);
@@ -84,7 +103,7 @@ h1 {
 }
 
 .target-text {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   letter-spacing: 2px;
   text-align: center;
@@ -94,30 +113,50 @@ h1 {
 .state-ready .target-text { color: var(--red); }
 .state-go .target-text { color: var(--green); }
 
+
+.rank-card {
+  background: rgba(168, 85, 247, 0.05);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 12px;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.rank-text {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--purple);
+  margin-top: 4px;
+  letter-spacing: 2px;
+}
+
+
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 12px;
 }
 
 .stat-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 15px;
+  padding: 12px;
   border-radius: 4px;
   text-align: center;
 }
 
 .stat-label {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: var(--text-dim);
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   letter-spacing: 1px;
 }
 
 .stat-value {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #fff;
 }

@@ -1,22 +1,37 @@
-# REFLEX TEST
+# CYBER // REFLEX ARCADE
 
-A minimalist, high-tech reaction speed tester built with vanilla HTML, CSS, and modern JavaScript. Measure your neural response time in milliseconds with dynamic state changes and persistent local tracking.
+A high-tech neural response benchmark tool built with vanilla HTML, CSS, and modern JavaScript. Measure reaction speed across a multi-round test to calculate real-time average speed and assign a performance rank.
 
 ---
 
 ## Features
 
-* **Millisecond Precision:** Uses native JavaScript high-resolution time tracking to record click speed down to the millisecond.
-* **State Engine:** Includes anti-cheat detection that flags early inputs if clicked before the active green signal.
-* **Persistent Best Score:** Saves your fastest reaction speed automatically to browser `localStorage`.
-* **Zero Dependencies:** Pure HTML5, CSS3, and modern JS—no external libraries or packages required.
+* **5-Round Average Mode:** Evaluates overall speed and consistency by calculating your mean reaction time across five sequential rounds.
+* **Neural Rank System:** Automatically computes and displays a performance tier based on your 5-round average score:
+  * **S-Tier (< 200 ms):** Cyber God
+  * **A-Tier (200 - 249 ms):** Neural Synapse
+  * **B-Tier (250 - 319 ms):** Human Standard
+  * **C-Tier (320 - 449 ms):** Lagging System
+  * **D-Tier (450+ ms):** System Failure
+* **Visual Progress Tracker:** Displays a 5-step progress indicator showing completed and active rounds.
+* **False-Start Penalty:** Instantly aborts and resets the sequence if clicked during the red waiting phase.
+* **Persistent Best Score:** Saves your top 5-round average automatically to browser `localStorage`.
 
 ---
 
 ## Tech Stack
 
-| Technology | Purpose |
+| Technology | Role |
 | :--- | :--- |
-| **HTML5** | Application structure & markup |
-| **CSS3** | Modern grid, custom properties, state transitions |
-| **JavaScript (ES6+)** | State management, event handling, local storage |
+| **HTML5** | Application architecture and layout components |
+| **CSS3** | Dynamic state themes, layout grids, and glowing HUD styling |
+| **JavaScript (ES6+)** | Multi-round state management, arithmetic averaging, and DOM updates |
+
+---
+
+## File Structure
+
+```text
+├── index.html     # Application layout & round indicators
+├── style.css      # Dark mode theme & visual states
+└── script.js     # Round engine, scoring, & ranking logic
