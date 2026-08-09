@@ -54,7 +54,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-
+/* Progress Tracker */
 .progress-bar {
   display: flex;
   gap: 8px;
@@ -72,7 +72,7 @@ h1 {
 .p-step.active { background: var(--cyan); }
 .p-step.done { background: var(--green); }
 
-
+/* Target Box */
 .target-box {
   height: 180px;
   border-radius: 6px;
@@ -113,7 +113,7 @@ h1 {
 .state-ready .target-text { color: var(--red); }
 .state-go .target-text { color: var(--green); }
 
-
+/* Rank Card */
 .rank-card {
   background: rgba(168, 85, 247, 0.05);
   border: 1px solid rgba(168, 85, 247, 0.3);
@@ -132,7 +132,7 @@ h1 {
   letter-spacing: 2px;
 }
 
-
+/* Stats */
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
