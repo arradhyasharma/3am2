@@ -1,0 +1,123 @@
+:root {
+  --bg: #07080c;
+  --panel: rgba(15, 18, 28, 0.85);
+  --border: rgba(0, 242, 254, 0.25);
+  --cyan: #00f2fe;
+  --red: #ff0055;
+  --green: #00ff88;
+  --text-dim: #64748b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  background-color: var(--bg);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-image: 
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.container {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 40px rgba(0, 242, 254, 0.05);
+}
+
+h1 {
+  font-size: 1.6rem;
+  color: var(--cyan);
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-bottom: 25px;
+}
+
+.target-box {
+  height: 200px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  border: 2px solid var(--border);
+  margin-bottom: 25px;
+}
+
+/* Game States */
+.target-box.state-wait {
+  background: rgba(0, 242, 254, 0.05);
+  border-color: var(--cyan);
+}
+
+.target-box.state-ready {
+  background: rgba(255, 0, 85, 0.1);
+  border-color: var(--red);
+}
+
+.target-box.state-go {
+  background: rgba(0, 255, 136, 0.2);
+  border-color: var(--green);
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+}
+
+.target-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.state-wait .target-text { color: var(--cyan); }
+.state-ready .target-text { color: var(--red); }
+.state-go .target-text { color: var(--green); }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}

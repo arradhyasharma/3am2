@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Reflex Test</title>
+</head>
+<body>
+
+  <main class="container">
+    <header>
+      <h1>REFLEX TESTER</h1>
+      <p class="subtitle">Measure neural response time in milliseconds.</p>
+    </header>
+    <div id="target-box" class="target-box state-wait">
+      <div id="target-text" class="target-text">CLICK TO START</div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">LAST SPEED</span>
+        <span id="last-score" class="stat-value">0 ms</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">BEST SPEED</span>
+        <span id="best-score" class="stat-value">0 ms</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
