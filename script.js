@@ -4,7 +4,7 @@ const avgScoreEl = document.getElementById('avg-score');
 const bestScoreEl = document.getElementById('best-score');
 const rankValueEl = document.getElementById('rank-value');
 
-let state = 'IDLE';
+let state = 'IDLE'; // States: 'IDLE', 'READY', 'GO'
 let timeoutId = null;
 let startTime = 0;
 let scores = [];
@@ -54,6 +54,7 @@ function startNextRound() {
 
 targetBox.addEventListener('click', () => {
   if (state === 'IDLE') {
+    // Reset score array only if starting a new game or retrying after an error/completion
     if (scores.length === 0 || scores.length === 5) {
       scores = [];
       rankValueEl.innerText = "EVALUATING...";
@@ -62,6 +63,7 @@ targetBox.addEventListener('click', () => {
     startNextRound();
 
   } else if (state === 'READY') {
+    // Clicked too early before the green box appeared
     clearTimeout(timeoutId);
     scores = [];
     setGameState('IDLE', 'EARLY CLICK! SEQUENCE RESET (CLICK TO RESTART)');
@@ -70,6 +72,7 @@ targetBox.addEventListener('click', () => {
     const elapsed = Date.now() - startTime;
     scores.push(elapsed);
 
+    // Track fastest single-click as Personal Best
     if (!bestScore || elapsed < parseInt(bestScore)) {
       bestScore = elapsed;
       localStorage.setItem('cyber_arcade_best', bestScore);
@@ -79,6 +82,7 @@ targetBox.addEventListener('click', () => {
     if (scores.length < 5) {
       setGameState('IDLE', `${elapsed} MS! CLICK FOR ROUND ${scores.length + 1}`);
     } else {
+      // Complete 5-round sequence calculation
       const sum = scores.reduce((a, b) => a + b, 0);
       const avg = Math.round(sum / scores.length);
       
